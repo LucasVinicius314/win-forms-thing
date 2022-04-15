@@ -6,10 +6,18 @@ public partial class Form1 : Form
   {
     InitializeComponent();
 
-    MessageBox.Show("aaaa");
+    var mult = 20;
 
-    var button = new Button { Text = "aaaaa" };
+    var textBox = new TextBox { Location = new Point { X = mult, Y = mult * 1 } };
 
+    var button = new Button { Text = "Click me", Location = new Point { X = mult, Y = mult * 3 } };
+
+    button.Click += (sender, e) =>
+    {
+      MessageBox.Show(textBox.Text);
+    };
+
+    Controls.Add(textBox);
     Controls.Add(button);
   }
 }
